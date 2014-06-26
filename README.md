@@ -9,6 +9,7 @@ Setup
 -----
 1. Clone the repo
 2. Set the necessary cluster variables in slider_setup.conf, it shouldn't be necessary to change any other values but thoe ones below
+
 ```
 # Zookeeper nodes
 ZK_QUORUM="zk1:2181,zk2:2181,zk3:2181"
@@ -43,12 +44,15 @@ Running
   * -n - The name of the app, this will be the display name in the resource manager and is used by the teardown process
 
 * HBase Example:
+
 ```./slider_setup -f slider_setup.conf -p hbase -w 5 -n hbase-slider```
 
 * Accumulo Example:
+
 ```./slider_setup -f slider_setup.conf -p accumulo -w 3 -n accumulo-slider```
 
 * Storm Example:
+
 ```./slider_setup -f slider_setup.conf -p storm -w 3 -n storm-slider```
 
 Tear Down
@@ -62,10 +66,13 @@ Tear Down
   * -n - The name of the app, this was provided to the slider_setup tool
 
 * HBase Example:
+
 ```./slider_destroy -f slider_setup.conf -n hbase-slider```
 
 * Accumulo Example:
+
 ```./slider_destroy -f slider_setup.conf -n accumulo-slider```
 
 * Storm Example:
+
 ```./slider_destroy -f slider_setup.conf -n storm-slider```
