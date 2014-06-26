@@ -25,7 +25,7 @@ DEFAULT_FS="hdfs://nn1:8020"
 
 Running
 -------
-*slider_setup is the main script and handles the following
+* slider_setup is the main script and handles the following
   1. Pulls down slider and extracts the contents to the SLIDER_INST_DIR
   2. Modifies slider-client.xml with cluster related info
   3. Pulls down the slider enabled version of the specified product
@@ -33,7 +33,7 @@ Running
   5. For HBase, creates the app dir in HDFS
   6. Submits the slider base application to the YARN cluster
 
-*The following args are required
+* The following args are required
   * -f - The path to the slider_setup.conf that has been modified with cluster info
   * -p - The product to run (hbase, accumulo, or storm are all that are supported at this time)
   * -w - The number of "worker" nodes. This has different meaning depending on product.
@@ -42,30 +42,30 @@ Running
     * Storm - number of supervisors
   * -n - The name of the app, this will be the display name in the resource manager and is used by the teardown process
 
-*HBase Example:
+* HBase Example:
 ```./slider_setup -f slider_setup.conf -p hbase -w 5 -n hbase-slider```
 
-*Accumulo Example:
+* Accumulo Example:
 ```./slider_setup -f slider_setup.conf -p accumulo -w 3 -n accumulo-slider```
 
-*Storm Example:
+* Storm Example:
 ```./slider_setup -f slider_setup.conf -p storm -w 3 -n storm-slider```
 
 Tear Down
 ---------
-*slider_destory will do the following
+* slider_destory will do the following
   1. Freeze the slider application based on provided name
   2. Destory the slider application based on provided name
 
-*The following args are required
+* The following args are required
   * -f - The path to the slider_setup.conf that has been modified with cluster info
   * -n - The name of the app, this was provided to the slider_setup tool
 
-*HBase Example:
+* HBase Example:
 ```./slider_destroy -f slider_setup.conf -n hbase-slider```
 
-*Accumulo Example:
+* Accumulo Example:
 ```./slider_destroy -f slider_setup.conf -n accumulo-slider```
 
-*Storm Example:
+* Storm Example:
 ```./slider_destroy -f slider_setup.conf -n storm-slider```
